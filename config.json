@@ -1,0 +1,91 @@
+{
+  "life_stage_factors": {
+    "neutered_adult": {
+      "min": 1.2,
+      "recommended": 1.3,
+      "max": 1.4,
+      "description": "Spayed or neutered adult cat"
+    },
+    "intact_adult": {
+      "min": 1.4,
+      "recommended": 1.5,
+      "max": 1.6,
+      "description": "Unaltered adult cat"
+    },
+    "inactive_obese_prone": {
+      "min": 1.0,
+      "recommended": 1.0,
+      "max": 1.0,
+      "description": "Sedentary or obese-prone cat"
+    },
+    "kitten_growth": {
+      "min": 2.5,
+      "recommended": 2.5,
+      "max": 2.5,
+      "description": "Growing kitten"
+    }
+  },
+
+  "activity_adjustment": {
+    "sedentary": {
+      "factor": 0.9,
+      "description": "Very low activity, sleeps most of day"
+    },
+    "typical": {
+      "factor": 1.0,
+      "description": "Normal activity level (default)"
+    },
+    "active": {
+      "factor": 1.1,
+      "description": "Plays frequently, energetic"
+    },
+    "outdoor": {
+      "factor": 1.15,
+      "description": "Has outdoor access"
+    }
+  },
+
+  "constants": {
+    "rer_multiplier": 70,
+    "minimum_calorie_floor": 0.7
+  },
+
+  "bcs_adjustment": {
+    "1": {
+      "adjustment": -0.40,
+      "description": "Severely underweight"
+    },
+    "2": {
+      "adjustment": -0.30,
+      "description": "Underweight"
+    },
+    "3": {
+      "adjustment": -0.20,
+      "description": "Lean"
+    },
+    "4": {
+      "adjustment": -0.10,
+      "description": "Slightly lean"
+    },
+    "5": {
+      "adjustment": 0.00,
+      "description": "Ideal"
+    },
+    "6": {
+      "adjustment": 0.10,
+      "description": "Slightly overweight"
+    },
+    "7": {
+      "adjustment": 0.20,
+      "description": "Overweight"
+    },
+    "8": {
+      "adjustment": 0.35,
+      "description": "Obese"
+    },
+    "9": {
+      "adjustment": 0.45,
+      "description": "Severely obese"
+    }
+  }
+}
