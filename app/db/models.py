@@ -55,3 +55,18 @@ class NutritionSource(Base):
 
     def __repr__(self):
         return f"<NutritionSource(id={self.id}, product_id={self.product_id}, source='{self.source}')>"
+
+
+class WeightEntry(Base):
+    """Cat weight tracking model"""
+    __tablename__ = "weight_entries"
+
+    id = Column(Integer, primary_key=True, index=True)
+    date = Column(DateTime(timezone=True), nullable=False, index=True)
+    weight_kg = Column(Float, nullable=False)
+    notes = Column(Text, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+    def __repr__(self):
+        return f"<WeightEntry(id={self.id}, date={self.date}, weight_kg={self.weight_kg})>"

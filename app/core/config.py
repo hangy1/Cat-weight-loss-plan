@@ -22,7 +22,7 @@ class Settings:
         # Database settings
         self.DATABASE_URL = os.getenv(
             "DATABASE_URL",
-            "postgresql://localhost/cat_calorie_db"
+            "sqlite:///./data/catfood.db"
         )
 
         # Load calculation config

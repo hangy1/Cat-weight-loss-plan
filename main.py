@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import router
 from app.api.catfood_routes import router as catfood_router
+from app.api.weight_routes import router as weight_router
 from app.core.config import settings
 
 # Initialize FastAPI app
@@ -24,6 +25,7 @@ app.add_middleware(
 # Include API routes
 app.include_router(router)
 app.include_router(catfood_router, prefix="/api")
+app.include_router(weight_router, prefix="/api")
 
 
 @app.on_event("startup")

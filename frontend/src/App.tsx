@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import { CatFoodMealPlanner } from './components/CatFoodMealPlanner'
+import { WeightTracker } from './components/WeightTracker'
 
 interface CalorieResult {
   current_weight_kg: number;
@@ -42,7 +43,7 @@ interface BCSScore {
 const API_BASE_URL = 'http://localhost:8000';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'calculator' | 'mealplanner'>('calculator')
+  const [activeTab, setActiveTab] = useState<'calculator' | 'mealplanner' | 'weighttracker'>('calculator')
   const [weight, setWeight] = useState<string>('')
   const [unit, setUnit] = useState<'kg' | 'lb'>('lb')
   const [lifeStage, setLifeStage] = useState<string>('neutered_adult')
@@ -183,6 +184,12 @@ function App() {
             onClick={() => setActiveTab('mealplanner')}
           >
             🍽️ Meal Planner
+          </button>
+          <button
+            className={`tab ${activeTab === 'weighttracker' ? 'active' : ''}`}
+            onClick={() => setActiveTab('weighttracker')}
+          >
+            📈 Weight Tracker
           </button>
         </div>
 
@@ -382,6 +389,10 @@ function App() {
 
         {activeTab === 'mealplanner' && (
           <CatFoodMealPlanner />
+        )}
+
+        {activeTab === 'weighttracker' && (
+          <WeightTracker />
         )}
       </div>
     </div>
